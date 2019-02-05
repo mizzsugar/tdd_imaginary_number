@@ -1,22 +1,6 @@
 import unittest
-from dataclasses import dataclass
 
-
-@dataclass
-class PurelyImaginaryNumber:
-    num: int
-
-    def __init__(self, num) -> None:
-        if num == 0:
-            raise ValueError
-        self.num = num
-
-    def __str__(self) -> str:
-        if self.num == 1:
-            return 'i'
-        elif self.num == -1:
-            return '-i'
-        return f'{self.num}i'
+from purely_imaginary_number import PurelyImaginaryNumber
 
 
 class TestImaginaryNumber(unittest.TestCase):
@@ -61,6 +45,16 @@ class TestImaginaryNumber(unittest.TestCase):
             i_2 = PurelyImaginaryNumber(2)
             self.assertFalse(i_4 == i_2)
 
+    def test_conjugate(self):
+        with self.subTest('check 4'):
+            i_4 = PurelyImaginaryNumber(4)
+            minus_i_4 = PurelyImaginaryNumber(-4)
+            self.assertTrue(i_4.is_conjugate_to(minus_i_4))
+
+        with self.subTest('check 1'):
+            i_1 = PurelyImaginaryNumber(1)
+            minus_i_1 = PurelyImaginaryNumber(-1)
+            self.assertTrue(i_1.is_conjugate_to(minus_i_1))
 
 if __name__ == '__main__':
     unittest.main()
