@@ -3,7 +3,7 @@ import unittest
 from purely_imaginary_number import PurelyImaginaryNumber
 
 
-class TestImaginaryNumber(unittest.TestCase):
+class TestPurelyImaginaryNumber(unittest.TestCase):
     def test_purely_imaginary_number(self):
         with self.subTest('create 4i'):
             i_4 = PurelyImaginaryNumber(4)
@@ -55,6 +55,7 @@ class TestImaginaryNumber(unittest.TestCase):
             i_1 = PurelyImaginaryNumber(1)
             minus_i_1 = PurelyImaginaryNumber(-1)
             self.assertTrue(i_1.is_conjugate_to(minus_i_1))
+
 
 if __name__ == '__main__':
     unittest.main()
