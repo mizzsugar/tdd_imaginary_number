@@ -50,6 +50,17 @@ class TestImaginaryNumber(unittest.TestCase):
             actual = str(minus_i_1)
             self.assertEqual(expected, actual)
 
+    def test_check_equality(self):
+        with self.subTest('check being equal'):
+            i_4_1 = PurelyImaginaryNumber(4)
+            i_4_2 = PurelyImaginaryNumber(4)
+            self.assertTrue(i_4_1 == i_4_2)
+
+        with self.subTest('check not being equal'):
+            i_4 = PurelyImaginaryNumber(4)
+            i_2 = PurelyImaginaryNumber(2)
+            self.assertFalse(i_4 == i_2)
+
 
 if __name__ == '__main__':
     unittest.main()
