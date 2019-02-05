@@ -12,7 +12,7 @@ class TestImaginaryNumber(unittest.TestCase):
             self.assertEqual(expected, actual)
 
         with self.subTest('create -2i'):
-            minus_i_2 = PurelyImaginaryNumber(2)
+            minus_i_2 = PurelyImaginaryNumber(-2)
             expected = '-2i'
             actual = str(minus_i_2)
             self.assertEqual(expected, actual)
