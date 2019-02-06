@@ -15,7 +15,7 @@ class ImaginaryNumber:
         self.imaginary = imaginary
 
     def __str__(self):
-        if self.imaginary.num < 0:
-            num = -1 * self.imaginary.num
+        if self.imaginary.myint.num < 0:
+            num = -1 * self.imaginary.myint.num
             return f"{self.real} - {num}i"
         return f"{self.real} + {self.imaginary}"

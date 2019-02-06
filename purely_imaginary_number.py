@@ -2,22 +2,22 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from myint import MyInt
+
 
 @dataclass
 class PurelyImaginaryNumber:
-    num: int
+    myint: MyInt
 
-    def __init__(self, num) -> None:
-        if num == 0:
-            raise ValueError
-        self.num = num
+    def __init__(self, myint: MyInt) -> None:
+        self.myint = myint
 
     def __str__(self) -> str:
-        if self.num == 1:
+        if self.myint.num == 1:
             return 'i'
-        elif self.num == -1:
+        elif self.myint.num == -1:
             return '-i'
-        return f'{self.num}i'
+        return f'{self.myint.num}i'
 
     def is_conjugate_to(self, other: PurelyImaginaryNumber) -> bool:
-        return self.num == other.num * (-1)
+        return self.myint.num == other.myint.num * (-1)
