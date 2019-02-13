@@ -7,5 +7,5 @@ class MyInt:
 
     def __init__(self, num):
         if num == 0:
-            raise ValueError('cannot create with 0')
+            raise ValueError('cannot create  MyInt with 0')
         self.num = num

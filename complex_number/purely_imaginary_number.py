@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from myint import MyInt
+from complex_number.myint import MyInt
 
 
 @dataclass

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from purely_imaginary_number import PurelyImaginaryNumber
+from complex_number.purely_imaginary_number import PurelyImaginaryNumber
 
 
 @dataclass

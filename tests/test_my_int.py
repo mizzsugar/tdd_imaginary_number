@@ -1,6 +1,6 @@
 import unittest
 
-from myint import MyInt
+from complex_number.myint import MyInt
 
 
 class TestMyInt(unittest.TestCase):

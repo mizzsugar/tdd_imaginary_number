@@ -1,8 +1,8 @@
 import unittest
 
-from imaginary_number import ImaginaryNumber
-from myint import MyInt
-from purely_imaginary_number import PurelyImaginaryNumber
+from complex_number.imaginary_number import ImaginaryNumber
+from complex_number.myint import MyInt
+from complex_number.purely_imaginary_number import PurelyImaginaryNumber
 
 
 class TestImaginaryNumber(unittest.TestCase):
