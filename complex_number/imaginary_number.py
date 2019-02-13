@@ -9,12 +9,12 @@ class ImaginaryNumber:
     imaginary: PurelyImaginaryNumber
 
     def __init__(self, real: int, imaginary: PurelyImaginaryNumber):
-        if real == 0:
-            raise ValueError
         self.real = real
         self.imaginary = imaginary
 
     def __str__(self):
+        if self.real == 0:
+            return str(self.imaginary)
         if self.imaginary.myint.num < 0:
             num = -1 * self.imaginary.myint.num
             return f"{self.real} - {num}i"

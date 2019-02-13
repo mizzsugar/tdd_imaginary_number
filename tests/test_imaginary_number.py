@@ -21,10 +21,12 @@ class TestImaginaryNumber(unittest.TestCase):
             actual = str(i2_minus4)
             self.assertEqual(expected, actual)
 
-        with self.subTest('real part is 0'):
+        with self.subTest('0 + 4i'):
             i4 = PurelyImaginaryNumber(MyInt(4))
-            with self.assertRaises(ValueError):
-                ImaginaryNumber(0, i4)
+            i0_4 = ImaginaryNumber(0, i4)
+            expected = '4i'
+            actual = str(i0_4)
+            self.assertEqual(expected, actual)
 
     def test_check_equality(self):
         with self.subTest('check being equal'):
