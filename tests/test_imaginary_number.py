@@ -26,6 +26,20 @@ class TestImaginaryNumber(unittest.TestCase):
             with self.assertRaises(ValueError):
                 ImaginaryNumber(0, i4)
 
+    def test_check_equality(self):
+        with self.subTest('check being equal'):
+            i4 = PurelyImaginaryNumber(MyInt(4))
+            i2_4_1 = ImaginaryNumber(2, i4)
+            i2_4_2 = ImaginaryNumber(2, i4)
+            self.assertTrue(i2_4_1 == i2_4_2)
+
+        with self.subTest('check not being equal'):
+            i4 = PurelyImaginaryNumber(MyInt(4))
+            i2_4 = ImaginaryNumber(2, i4)
+            i2 = PurelyImaginaryNumber(MyInt(2))
+            i2_2 = ImaginaryNumber(2, i2)
+            self.assertFalse(i2_4 == i2_2)
+
 
 if __name__ == '__main__':
     unittest.main()
