@@ -1,3 +1,4 @@
+from __future__ import annotations
 from dataclasses import dataclass
 
 from complex_number.purely_imaginary_number import PurelyImaginaryNumber
@@ -19,3 +20,7 @@ class ImaginaryNumber:
             num = -1 * self.imaginary.myint.num
             return f"{self.real} - {num}i"
         return f"{self.real} + {self.imaginary}"
+
+    def is_conjugate_to(self, other: ImaginaryNumber):
+        return self.real == other.real \
+               and self.imaginary.is_conjugate_to(other.imaginary)
