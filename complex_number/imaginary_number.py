@@ -1,26 +1,30 @@
 from __future__ import annotations
 from dataclasses import dataclass
+from typing import Any
 
-from complex_number.purely_imaginary_number import PurelyImaginaryNumber
+from complex_number.myint import MyInt
 
 
 @dataclass
 class ImaginaryNumber:
     real: int
-    imaginary: PurelyImaginaryNumber
+    imaginary: MyInt
 
-    def __init__(self, real: int, imaginary: PurelyImaginaryNumber):
-        if real == 0:
-            raise ValueError
+    def __init__(self, real: int, imaginary: MyInt):
         self.real = real
         self.imaginary = imaginary
 
-    def __str__(self):
-        if self.imaginary.myint.num < 0:
-            num = -1 * self.imaginary.myint.num
-            return f"{self.real} - {num}i"
-        return f"{self.real} + {self.imaginary}"
+    def __eq__(self, other: Any) -> bool:
+        return (
+                isinstance(other, ImaginaryNumber)
+                and self.real == other.real
+                and self.imaginary == other.imaginary
+        )
 
-    def is_conjugate_to(self, other: ImaginaryNumber):
-        return self.real == other.real \
-               and self.imaginary.is_conjugate_to(other.imaginary)
+    def __str__(self):
+        if self.real == 0:
+            return f"{self.imaginary.num}i"
+        if self.imaginary.num < 0:
+            num = -1 * self.imaginary.num
+            return f"{self.real} - {num}i"
+          
