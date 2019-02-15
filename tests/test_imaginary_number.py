@@ -36,22 +36,6 @@ class TestImaginaryNumber(unittest.TestCase):
             i2_2 = ImaginaryNumber(2, MyInt(2))
             self.assertFalse(i2_4 == i2_2)
 
-    def test_real_is_0(self):
-        i4 = PurelyImaginaryNumber(MyInt(4))
-        i0_4 = ImaginaryNumber(0, MyInt(4))
-        self.assertTrue(i0_4 == i4)
-
-    def test_conjugate_pure_0(self):
-        with self.subTest('start with PurelyImaginaryNum'):
-            i4 = PurelyImaginaryNumber(MyInt(4))
-            minus_i0_4 = ImaginaryNumber(0, MyInt(-4))
-            self.assertTrue(minus_i0_4.is_conjugate_to(i4))
-
-        with self.subTest('start with ImaginaryNum'):
-            i4 = PurelyImaginaryNumber(MyInt(4))
-            minus_i0_4 = ImaginaryNumber(0, MyInt(-4))
-            self.assertTrue(i4.is_conjugate_to(minus_i0_4))
-
 
 if __name__ == '__main__':
     unittest.main()

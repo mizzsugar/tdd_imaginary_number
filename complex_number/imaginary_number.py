@@ -27,8 +27,4 @@ class ImaginaryNumber:
         if self.imaginary.num < 0:
             num = -1 * self.imaginary.num
             return f"{self.real} - {num}i"
-        return f"{self.real} + {self.imaginary.num}i"
-
-    def is_conjugate_to(self, other: ImaginaryNumber) -> bool:
-        return self.real == other.real \
-               and self.imaginary.num == -1 * other.imaginary.num
+          
